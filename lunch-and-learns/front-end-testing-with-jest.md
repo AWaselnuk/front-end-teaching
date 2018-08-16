@@ -2,7 +2,7 @@
 
 ## Intro
 
-Front End Testing is difficult. The reason it is difficult is because a typical piece of front end code has to coordinate HTML (the DOM), CSS (styling rules in the DOM), and JavaScript. It is fraught with side-effects, global state, and tenous interfaces by its very nature. It often runs in asynchronous functions making race conditions likely and test setup difficult.
+Front End Testing is difficult. The reason it is difficult is because a typical piece of front end code has to coordinate HTML (the DOM), CSS (styling rules in the DOM), and JavaScript. It is fraught with side-effects, global state, and tenous interfaces by its very nature. It often runs in asynchronous functions making race conditions likely and test setup difficult. Every runtime is different, your CI environment (probably running in nodeJS) will be missing functions that browser have available or vice versa.
 
 Systems like React, have made this story much better by moving everything into one place (JavaScript). But we still have tons of code that is not written in React and we should try to have some basic mental model for testing that type of front end.
 
@@ -46,6 +46,8 @@ We can use this mental model on a zoomed in scale to think about testing our UI.
 Let's look at examples using the [Jest](https://jestjs.io/) testing framework.
 
 * Basics - running a test, where to put the test, assertion style, setup and teardown
+  * `yarn test` - full test suite
+  * `yarn run jest find.test.js` - run a file. You can use a pattern like `yarn run jest find`
 * Using mocks
 * Async example
 * Demo of Jest snapshots
